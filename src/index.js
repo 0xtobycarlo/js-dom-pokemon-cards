@@ -48,4 +48,31 @@ for (const element of data) {
       element.sprites.other["dream_world"]["front_default"]
     );
   });
+
+  ulPokemonStats.append(
+    liStatHP,
+    liStatAttack,
+    liStatDefense,
+    liStatSpecialAttack,
+    liStatSpecialDefense,
+    liStatSpeed,
+    liGamesPlayed
+  );
+
+  let pokStats = element.stats;
+
+  for (pokStat of pokStats) {
+    if (pokStat.stat.name === "hp")
+      liStatHP.innerText = `${pokStat.stat.name} : ${pokStat["base_stat"]}`;
+    else if (pokStat.stat.name === "attack")
+      liStatAttack.innerText = `${pokStat.stat.name} : ${pokStat["base_stat"]}`;
+    else if (pokStat.stat.name === "defense")
+      liStatDefense.innerText = `${pokStat.stat.name} : ${pokStat["base_stat"]}`;
+    else if (pokStat.stat.name === "special-attack")
+      liStatSpecialAttack.innerText = `${pokStat.stat.name} : ${pokStat["base_stat"]}`;
+    else if (pokStat.stat.name === "special-defense")
+      liStatSpecialDefense.innerText = `${pokStat.stat.name} : ${pokStat["base_stat"]}`;
+    else if (pokStat.stat.name === "speed")
+      liStatSpeed.innerText = `${pokStat.stat.name} : ${pokStat["base_stat"]}`;
+  }
 }
